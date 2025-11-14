@@ -6,3 +6,5 @@ scikit-learn
 beautifulsoup4
 lxml
 pytest
+beautifulsoup4
+lxml
