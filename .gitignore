@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+.env
+data/
+results/
+kaggle.json
+.DS_Store
+.vscode/
+.idea/
