@@ -16,11 +16,10 @@ def normalize_name(s: str) -> str:
 
 
 def detect_attempts_column(df):
-    """Return which column stores rushing attempts."""
     for c in ["rAtt", "Att", "ATT"]:
         if c in df.columns:
             return c
-    raise KeyError("No rushing attempts column found (rAtt or Att).")
+    raise KeyError("No rushing attempts column found")
 
 
 def load_and_combine():
@@ -47,7 +46,7 @@ def load_and_combine():
 
 
 def filter_rb70(df):
-    """Filter RBs with >= 70 rushing attempts."""
+    """Filter RBs with >= 70 rushing attempts. FOR RELEVANCY TO ARGUEMENT."""
 
     if "Pos" in df.columns:
         df = df[df["Pos"] == "RB"]

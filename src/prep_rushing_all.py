@@ -21,22 +21,16 @@ def _load_csv(path: str) -> pd.DataFrame:
 
 
 def _detect_attempts_column(df: pd.DataFrame) -> str:
-    """
-    Detect the rushing attempts column name.
-    Prefer 'rAtt' (your cleaned schema), but fall back to 'Att' if needed.
-    """
+
     if "rAtt" in df.columns:
         return "rAtt"
     if "Att" in df.columns:
         return "Att"
-    raise KeyError("Could not find a rushing attempts column ('rAtt' or 'Att').")
+    raise KeyError("Could not find a rushing attempts column.")
 
 
 def load_and_merge_rushing() -> pd.DataFrame:
-    """
-    Load rushing_cleaned.csv (2001–2023) and rb_rushing_2024.csv,
-    merge into a single DataFrame, and standardize basic types.
-    """
+
     if not os.path.exists(HISTORICAL_FILE):
         raise FileNotFoundError(f"Missing {HISTORICAL_FILE}")
     if not os.path.exists(R2024_FILE):
@@ -63,16 +57,9 @@ def load_and_merge_rushing() -> pd.DataFrame:
 
 
 def filter_rb_70_plus(full: pd.DataFrame) -> Tuple[pd.DataFrame, pd.DataFrame]:
-    """
-    From the combined table, return:
-      - filtered DataFrame: only RBs (if Pos column exists) and 70+ rushing attempts
-      - names DataFrame: unique Player-Year pairs for those RBs (for OverTheCap work)
-
-    If 'Pos' is not present, we assume the dataset is already RB-only.
-    """
     df = full.copy()
 
-    # Filter by position if available
+    # Filter by position
     if "Pos" in df.columns:
         df = df[df["Pos"] == "RB"]
 
@@ -90,7 +77,7 @@ def filter_rb_70_plus(full: pd.DataFrame) -> Tuple[pd.DataFrame, pd.DataFrame]:
             .reset_index(drop=True)
         )
     else:
-        # Fallback: just unique names
+        # Fallback
         names_df = (
             df[["Player"]]
             .dropna()

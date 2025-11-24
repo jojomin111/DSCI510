@@ -10,7 +10,7 @@ OUT_FINAL = os.path.join(DATA_DIR, "rb_analysis_master.csv")
 
 
 def normalize_name(s: str) -> str:
-    """Make player names lowercase stripped strings."""
+    """player names lowercase stripped strings."""
     if s is None:
         return ""
     return str(s).strip().lower()
