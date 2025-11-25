@@ -1,5 +1,5 @@
 """
-PLANNED Scraper for Pro-Football-Reference yearly rushing stats. This was NOT used due to the fact that PFR has bot and bulk blockers. I had utilized manual copy and paste and csv cleaning as seen in prep_rushin_2024.py
+PLANNED Scraper for Pro-Football-Reference yearly rushing stats. This was NOT used due to the fact that PFR has bot and bulk blockers. I had utilized manual copy and paste and csv cleaning as seen in prep_rushing_2024.py
 
 """
 
