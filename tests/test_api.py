@@ -4,15 +4,7 @@ Basic tests for the NFL Running Back Value.
 1. The ESPN team stats API returns data in the expected format.
 2. The OverTheCap RB contract scraper returns a non-empty DataFrame
    with the expected cleaned columns.
-3. The money/percentage cleaning helper functions behave as expected.
-
-Activate your virtual environment, then from the project root run:
-
-    pytest
-
-or,
-
-    python -m pytest
+3. The money cleaning helper functions behave as expected.
 """
 
 from typing import Any, Dict, List
@@ -94,7 +86,7 @@ def test_espn_fetch_league_team_stats() -> None:
     season = 2024
     data: List[Dict[str, Any]] = fetch_league_team_stats(season, throttle=0.0)
 
-    # There should be at least 30 records (32 teams in the NFL).
+    # There should be 32 teams in the NFL.
     assert len(data) >= 30, f"Expected at least 30 teams, got {len(data)}."
 
     # Check the structure of the first record

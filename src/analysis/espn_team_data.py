@@ -1,6 +1,4 @@
 """
-Utilities for loading ESPN NFL team stats (2000–2024).
-
 Assumes JSON files created by src/api/espn_nfl.py like:
   data/espn_team_stats_2000.json
   data/espn_team_stats_2001.json

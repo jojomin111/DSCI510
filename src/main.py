@@ -26,9 +26,6 @@ def run_pipeline(season: int, save_espn: str | None, save_otc: str | None) -> No
     """
     Run the basic data collection:
 
-    - Fetch ESPN team stats for the given season.
-    - Scrape OverTheCap RB contract history.
-    - Optionally save both datasets to disk.
     """
 
     print(f"Running data pipeline for season {season}")

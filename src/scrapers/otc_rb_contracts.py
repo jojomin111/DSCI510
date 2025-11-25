@@ -1,8 +1,6 @@
 """
 Scrape OverTheCap running back contract history into a CSV.
 
-Source page:
-https://overthecap.com/contract-history/running-back
 """
 
 import argparse
