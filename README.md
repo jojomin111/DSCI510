@@ -67,6 +67,8 @@ I answered the main question that I first sought to answer which was "Are runnin
 
 ## Run Tests
 
+NOTE: For .ipynb (I used google colab) and you will need to run the PlayerANDteam to get the final_rb_analysis_master.csv which is then used in the results.ipynb
+
 pytest src/tests.py
 
 ## Quick Start
